@@ -1,0 +1,136 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #4f46e5, #7c3aed);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+
+.pagina {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.titulo {
+    width: 40%;
+    text-align: center;
+}
+
+.titulo h1 {
+    color: white;
+    font-size: 40px;
+    margin: 0;
+}
+
+.formulario {
+    width: 90%;
+    max-width: 500px;
+    padding: 40px;
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+    border-radius: 25px;
+}
+
+
+label {
+    display: block;
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: 15px;
+    margin-bottom: 6px;
+    color: #eeeeee;
+}
+
+
+input {
+    width: 100%;
+    padding: 12px;
+    margin: 0;
+    box-sizing: border-box;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #333;
+    font-size: 15px;
+    outline: none;
+    transition: 0.3s;
+}
+
+textarea {
+    width: 100%;
+    padding: 12px;
+    margin: 0;
+    box-sizing: border-box;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #333;
+    font-size: 15px;
+    outline: none;
+    transition: 0.3s;
+}
+
+
+input:focus {
+    border-color: white;
+
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.2);
+}
+
+
+.data {
+    width: 100%;
+}
+
+
+button {
+    padding: 14px 20px;
+    background-color: white;
+    color: #4f46e5;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    margin: 30px auto 0;
+    width: 200px;
+    display: block;
+    font-size: 16px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+
+button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+
+@media (max-width: 600px) {
+    .formulario {
+        width: 85%;
+        padding: 30px 20px;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    input {
+        font-size: 14px;
+    }
+
+    button {
+        width: 100%;
+    }
+}
