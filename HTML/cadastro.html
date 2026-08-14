@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Novo Cliente</title>
+    <link rel="stylesheet" href="../CSS/style.css">
+</head>
+<body onload="configurarDataAgendamento()">
+
+
+<div class="pagina">
+    <div calss="titulo">
+        <h1>Cadastro - Novo Cliente</h1>
+    </div>
+
+
+    <div class="formulario">
+    <form method="get">
+    <label for="">Nome:</label>
+    <input type="text" id="nomeCliente" 
+    name="nomeCliente" placeholder="Ex.: José Silva">
+
+    <br>    
+    <br>
+
+    <label for="">CPF:</label>
+    <input type="tel" id="cpfCliente" 
+    name="cpfCliente" placeholder="000.000.000-00">
+
+    <br>
+    <br>
+
+    <label for="">Data de Nascimento:</label>
+    <input type="date" id="dataNascimentoCliente"
+    name="dataNascimentoCliente">
+
+    <br>
+    <br>
+
+    <label for="">Telefone/ WhatsApp:</label>
+    <input type="tel" id="telefoneCliente" 
+    name="telefoneCliente" placeholder="(16)99999-9999">
+
+    <br>
+    <br>
+
+    <label for="">E-mail:</label>
+    <input type="email" id="emailCliente"
+    name="emailCliente" placeholder="joao.silva@gmail.com">
+
+    <br>
+    <br>
+
+    <label for="">Endereço:</label>
+    <input type="text" id="enderecoCliente"
+    name="enderecoCliente" placeholder="CEP, Rua/Avenida, Número, Bairro, Cidade e Estado.">
+
+    <br>
+    <br>
+
+    <label for="horaAgendamento">Data e Hora do Agendamento:</label>
+
+<input
+    type="datetime-local"
+    step="900"
+    id="horaAgendamento"
+>
+
+    <br>
+    <br>
+
+    <label for="">Observações:</label>
+    <textarea id="observacoesCliente"
+    name="observacoesCliente" placeholder="Informações adicionais..."></textarea>
+    
+    <button type="button" onclick="salvarCliente()">Agendar</button>
+
+    </form>
+    </div>
+</div>
+    <script src="../JS/cadastro.js"></script>
+</body>
+</html>
