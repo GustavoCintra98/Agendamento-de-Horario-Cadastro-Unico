@@ -6,11 +6,9 @@ function carregarClientes(){
     JSON.parse(localStorage.getItem("clientes")) || [];
 
     if (listaClientes.length === 0){
-
         areaLista.innerHTML = 
         "<p>Nenhum cliente cadastrado</p>";
         return;
-
     }
 
     areaLista.innerHTML = "";
@@ -35,9 +33,19 @@ function carregarClientes(){
        ${listaClientes[i].horaagendamento} <br>
        <strong>Observações:</strong>
        ${listaClientes[i].observacoes} <br>
-       <button class="botao">Deletar</button>
+       <button class="botao" onclick="deletarCliente(${i})">Deletar</button>
        </div>`;
 
     }
 
+}
+
+function deletarCliente(index){
+    let listaClientes = JSON.parse(localStorage.getItem("clientes")) || []; 
+
+    listaClientes.splice(index,1);
+
+    localStorage.setItem("clientes", JSON.stringify(listaClientes));
+
+    carregarClientes();
 }
