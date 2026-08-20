@@ -1,22 +1,22 @@
-function carregarClientes(){
+function carregarClientes() {
 
     let areaLista = document.getElementById("areaLista");
 
-    let listaClientes = 
-    JSON.parse(localStorage.getItem("clientes")) || [];
+    let listaClientes =
+        JSON.parse(localStorage.getItem("clientes")) || [];
 
-    if (listaClientes.length === 0){
-        areaLista.innerHTML = 
-        "<p>Nenhum cliente cadastrado</p>";
+    if (listaClientes.length === 0) {
+        areaLista.innerHTML =
+            "<p>Nenhum cliente cadastrado</p>";
         return;
     }
 
     areaLista.innerHTML = "";
 
-    for (let i = 0; i < listaClientes.length; i++){
+    for (let i = 0; i < listaClientes.length; i++) {
 
-        areaLista.innerHTML += 
-       `<div class="exibirDados">
+        areaLista.innerHTML +=
+            `<div class="exibirDados">
        <strong>Nome:</strong>
        ${listaClientes[i].nome} <br>
        <strong>Telefone:</strong>
@@ -40,12 +40,20 @@ function carregarClientes(){
 
 }
 
-function deletarCliente(index){
-    let listaClientes = JSON.parse(localStorage.getItem("clientes")) || []; 
+function deletarCliente(index) {
 
-    listaClientes.splice(index,1);
+    let listaClientes = JSON.parse(localStorage.getItem("clientes")) || [];
 
-    localStorage.setItem("clientes", JSON.stringify(listaClientes));
+    let confirmar = confirm(`Deseja deletar o agendamento: ${listaClientes[index].nome}`);
 
-    carregarClientes();
+    if (confirmar == true) {
+
+        listaClientes.splice(index, 1);
+
+        localStorage.setItem("clientes", JSON.stringify(listaClientes));
+
+        carregarClientes();
+
+    }
+
 }
