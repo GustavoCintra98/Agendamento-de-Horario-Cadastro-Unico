@@ -57,3 +57,49 @@ function deletarCliente(index) {
     }
 
 }
+
+function buscarAgendamento() {
+    let termoPesquisa = document.getElementById("inputPesquisar").value.toLowerCase();
+
+    let areaLista = document.getElementById("areaLista")
+
+    let listaClientes = JSON.parse(localStorage.getItem("clientes") || [])
+
+    let valorEncontrado = false
+
+    areaLista.innerHTML = "";
+
+    for (let i = 0; i < listaClientes.length; i++) {
+
+        if (listaClientes[i].nome.toLowerCase().includes(termoPesquisa)) {
+            valorEncontrado = true;
+
+            areaLista.innerHTML +=
+                `<div style='border: 1px solid #000"; padding: 10px; margin-bottom: 5px;'>
+            
+                <strong>Nome: </strong>
+                ${listaClientes[i].nome}
+                <strong>Telefone: </strong>
+                ${listaClientes[i].telefone}
+                <strong>E-mail:</strong>
+                ${listaClientes[i].email} <br>
+                <strong>CPF:</strong>
+                ${listaClientes[i].cpf} <br>
+                <strong>Data de Nascimento:</strong>
+                ${listaClientes[i].datanascimento} <br>
+                <strong>Endereço:</strong>
+                ${listaClientes[i].endereco} <br>
+                <strong>Hora do Agendamento:</strong>
+                ${listaClientes[i].horaagendamento} <br>
+                <strong>Observações:</strong>
+                ${listaClientes[i].observacoes} <br>
+                <button class="botao" onclick="deletarCliente(${i})">Deletar</button>
+            </div>`;
+        }
+
+    }
+
+    if (valorEncontrado == false){
+        areaLista.innerHTML = "<p>Nenhum Agendamento Encontrado!</p>"
+    }
+}

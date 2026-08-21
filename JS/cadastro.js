@@ -18,7 +18,7 @@ function salvarCliente(){
 
     if (nome == "" || telefone == "" || email == "" || datanascimento == "" || endereco == "" || horaagendamento == "" || observacoes == "") {
 
-        alert("Preencha todos os campos seu sapequinha! 😊");
+        alert("Preencha todos os campos!");
         return;
 
     }
